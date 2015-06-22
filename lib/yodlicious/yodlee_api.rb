@@ -253,6 +253,13 @@ module Yodlicious
       user_session_execute_api '/jsonsdk/SiteAccountManagement/getAllSiteAccounts'
     end
 
+    def get_site_login_form site_id
+      params = {
+          'siteId' => site_id
+      }
+      cobranded_session_execute_api '/jsonsdk/SiteAccountManagement/getSiteLoginForm', params
+    end
+
     def get_site_info site_id
       params = {
         'siteFilter.siteId' => site_id,
